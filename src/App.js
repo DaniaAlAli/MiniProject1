@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+//Styles
+import { GlobalStyle, HeaderIntro, Name } from "./styles";
+import { ThemeProvider } from "styled-components";
+
+//Components
+import DataList from "./components/DataList";
+
+const theme = {
+  fontFamily: "Indie Flower, cursive",
+  alignItem: "center",
+  justifyContent: "center",
+  display: "flex",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Name>D A N I A _ A L A L I</Name>
+      <HeaderIntro>Hello, welcome to my life!</HeaderIntro>
+      <DataList />
+    </ThemeProvider>
   );
 }
 
